@@ -1,4 +1,4 @@
-Flask==2.0.2certifi==2022.9.24
+certifi==2022.9.24
 charset-normalizer==2.1.1
 click==8.1.3
 Flask==2.0.2
