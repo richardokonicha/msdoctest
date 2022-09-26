@@ -6,7 +6,7 @@ import telebot
 import os
 
 # importdir.do("features", globals())
-webhook_url = ""
+webhook_url = "https://lofi5.azurewebsites.net/"
 token = "5410666315:AAEjKnX7OxCEvaJOZ8k5Bq17j8mIsR0vW1Y"
 debug = False
 
@@ -19,14 +19,20 @@ bot = telebot.TeleBot(
     threaded=True
 )
 
-
 @bot.message_handler(commands=["start", "Start"])
 def start(message):
     userid = message.from_user.id
+    print("printing")
     bot.send_chat_action(userid, action='typing')
     return bot.send_message(userid,  text="answer")
 
-
+@bot.message_handler(commands=["send", "Start"])
+def start(message):
+    userid = message.from_user.id
+    text = message.text
+    print("printing")
+    bot.send_chat_action(userid, action='typing')
+    return bot.send_message(userid,  text=text)
 
 @app.route('/')
 def index():
